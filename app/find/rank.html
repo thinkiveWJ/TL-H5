@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./swiper.min.css?v=2.0.2">
+    <link href="./common.css?v=2.0.2" rel="stylesheet"/>
+    <title>运动排行榜</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=2.0.2"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=2.0.2"></script>
+    <script type="text/javascript" src="./jquery.cookie.js?v=2.0.2"></script>
+    <script type="text/javascript" src="./page.common.js?v=2.0.2"></script>
+</head>
+<body style="background:#f4f3f8;">
+    <div id="last">
+        <div class="rank-banner">
+            <img src="../images/sport_banner.png" alt="运动排行Banner">
+            <div class="title text-center" id="firstRank">
+                <img src="" alt="运动排行第一名头像">
+                <span class="name"></span><span class="content">占领了封面</span>
+            </div>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <div class="rank-box" id="personInfo">
+                <!--<div class="rank-box-details">-->
+                <!--<div class="icon icon-sort on left">&nbsp;</div>-->
+                <!--<img src="../images/icon_head.png" alt="头像" class="icon-rank-head left">-->
+                <!--<div class="content left">-->
+                <!--<div class="name">周星星</div>-->
+                <!--<div class="sort">排名 20</div>-->
+                <!--</div>-->
+                <!--<div class="content right">-->
+                <!--<div class="content-num">99+</div>-->
+                <!--<img src="../images/follow_01.png" alt="点赞"  class="content-follow on">-->
+                <!--</div>-->
+                <!--<div class="step text-right right">1789</div>-->
+                <!--<div class="clearfix"></div>-->
+                <!--</div>-->
+            </div>
+            <div class="rank-box" id="rankList">
+                <!--<div class="rank-box-details">-->
+                <!--<div class="icon icon-sort on left"><img src="../images/rank_01.png" alt="1"></div>-->
+                <!--<img src="../images/icon_head.png" alt="头像" class="icon-rank-head left">-->
+                <!--<div class="content name left">-->
+                <!--周星星-->
+                <!--</div>-->
+                <!--<div class="content right">-->
+                <!--<div class="content-num">9</div>-->
+                <!--<img src="../images/follow_02.png" alt="点赞"  class="content-follow">-->
+                <!--</div>-->
+                <!--<div class="step text-right right">1789</div>-->
+                <!--<div class="clearfix"></div>-->
+                <!--</div>-->
+            </div>
+            <div class="btn-more-box" id="payListMore" style="display: none;"><a type="button" style="border:none;width: 100%;" class="btn btn-default btn-more">更多</a></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./rank.js?v=2.0.2"></script>
+</body>
+</html>

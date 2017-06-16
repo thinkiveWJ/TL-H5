@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>摩赞 | 手环后台管理</title>
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link href="../../style/bootstrap.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/bootstrap-datepicker.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/ui.chosen.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/base.css?v=2.0.0" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-datepicker.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-paginator.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/ui.chosen.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/page.common.js?v=2.0.0"></script>
+    <!--[if lt IE 9]>
+    <script src="../../js/html5shiv.min.js?v=2.0.0"></script>
+    <script src="../../js/respond.min.js?v=2.0.0"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="main">
+    <div class="container-fluid" >
+        <div class="row search-box">
+            <h4 class="title">用户管理</h4>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="" class="form-label">用户昵称：</label>
+                    <input type="text" id="" placeholder="用户昵称" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="" class="form-label">手机号：</label>
+                    <input type="text" id="" placeholder="手机号" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-12 text-right search-btn">
+                <a type="button" class="btn btn-primary"><sapn class="glyphicon glyphicon-search"></sapn> 查询</a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead>
+                    <td style="margin-left: 15px;"><input id="all" type="checkbox"></td>
+                    <td>序号</td>
+                    <td>用户ID</td>
+                    <td>用户昵称</td>
+                    <td>手机号</td>
+                    <td>性别</td>
+                    <td>年龄</td>
+                    <td>操作</td>
+                </thead>
+                <tbody id="tbody">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><a id="userPanelBTN" type="button" class="btn btn-default">全部优惠券</a></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <ul id="pager"></ul>
+    </div>
+</div>
+<!-- 用户全部优惠券 -->
+<div class="modal fade" id="userPanel" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <a id="addAddressBTN" type="button" class="btn btn-primary pull-right" style="margin-right: 15px;"><span class="glyphicon glyphicon-search"></span> 查询</a>
+                <h4 class="modal-title">用户全部优惠券</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row search-box">
+                    <div class="col-md-6">
+                        <div class="form-display">
+                            <label for="" class="form-label">优惠券类型：</label>
+                            <select id="" data-xtype="chosen" class="form-input"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-display">
+                            <label for="" class="form-label">所属活动：</label>
+                            <select id="" data-xtype="chosen" class="form-input"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-display">
+                            <label for="" class="form-label">状态：</label>
+                            <select id="" data-xtype="chosen" class="form-input"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-right search-btn">
+                        <a type="button" class="btn btn-primary"><sapn class="glyphicon glyphicon-search"></sapn> 查询</a>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped text-center">
+                        <thead>
+                        <!--<td style="margin-left: 15px;"><input id="all" type="checkbox"></td>-->
+                        <td>序号</td>
+                        <td>优惠券类型</td>
+                        <td>所属活动</td>
+                        <td>优惠券码</td>
+                        <td>生产批次号</td>
+                        <td>面额</td>
+                        <td>有效期</td>
+                        <td>优惠券名称</td>
+                        <td>使用说明</td>
+                        <td>状态</td>
+                        <td>创建时间</td>
+                        <td>领取时间</td>
+                        <td>过期时间</td>
+                        <td>使用时间</td>
+                        </thead>
+                        <tbody id="userTbody">
+
+                        </tbody>
+                    </table>
+                </div>
+                <ul id="addressPager"></ul>
+            </div>
+            <!--<div class="modal-footer">-->
+            <!--<button type="button" class="btn btn-primary cancel" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> 取消</button>-->
+            <!--&lt;!&ndash;<button type="button" class="btn btn-primary ok"><span class="glyphicon glyphicon-ok"></span> 确定</button>&ndash;&gt;-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="userManagement.js?v=2.0.0"></script>
+</body>
+</html>

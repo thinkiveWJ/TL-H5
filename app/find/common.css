@@ -1,0 +1,527 @@
+@charset "UTF-8";
+body iframe{
+    opacity:0;
+    display:none;
+}
+div#last~div {
+    display: none;
+    opacity:0;
+}
+body{
+    font-family: "Microsoft YaHei";
+    background: #fff;
+}
+
+.btn-default:hover{
+    background:#fff;
+}
+.btn-warning,.btn-warning:hover{
+    background: #FF6600;
+}
+img{
+    font-size: 0;
+}
+em{
+    font-style: normal;
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+a:hover{
+    text-decoration: none;
+    color: #000;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/
+}a:visited{text-decoration:none; /*指已经访问过的链接*/
+ }a:hover{text-decoration:none;/*指鼠标在链接*/}a:active{text-decoration:none;/* 指正在点的链接*/
+                                          }
+pre{
+    white-space:pre-wrap;
+    border: none;
+    font-size: 16px;
+}
+ul{
+    padding: 0;
+    margin:0;
+}
+ul li {
+    list-style: none;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.none{
+    display: none;
+}
+.no-select{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.carousel-inner .item .item-a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.carousel-inner .item .item-a img{
+    display: block;
+    width: 100%;
+}
+.dry-share .dry-share-title{
+    font-size: 16px;
+    position: relative;
+    padding: 8px 0 15px;
+    height: 40px;
+}
+.dry-share .dry-share-title span{
+    line-height: 0.55;
+    border-bottom: 1px dashed #fff;
+    font-weight: bold;
+    margin-top: -1px;
+    width: 50%;
+}
+.dry-share .dry-share-title em{
+    position: absolute;
+    right: 0;
+    top: -2px;
+    left: 0;
+    margin: auto;
+    width: 100px;
+    color: #fff;
+    font-size: 15px;
+    /*font-weight: bold;*/
+    background: #CDCDCD;
+}
+.dry-share h4 .dry-title{
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #181818;
+    /*font-weight: bold;*/
+}
+.dry-share h4,
+.dry-share h5{
+    margin: 0;
+    background: #CDCDCD;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.dry-share ul{
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+.dry-share ul li{
+    display: block;
+    margin: 2px auto;
+}
+.dry-share ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-bottom: 36px;
+}
+.dry-share ul li a .title{
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 36px;
+    line-height: 36px;
+    font-size: 13px;
+    color: #333;
+}
+.dry-share ul li img{
+    width: 100%;
+    /*min-height: 120px;*/
+}
+.dry-share .btn-more-box{
+    margin: 0 -15px 10px;
+    /*background: #CDCDCD;*/
+    padding: 5px;
+}
+.dry-share a.btn-more,
+.dry-share a.btn-more:hover,
+.dry-share a.btn-more.hover,
+.dry-share a.btn-more.active,
+.dry-share a.btn-more:active,
+.dry-share a.btn-more.focus,
+.dry-share a.btn-more:focus{
+    outline: none;
+    border: 0;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    font-size: 13px;
+    border-radius: 3px;
+    color: #242424;
+    box-shadow: none;
+    padding: 0;
+    /*font-weight: bold;*/
+}
+.swiper-slide{
+    /*height: 180px;*/
+}
+.swiper-slide a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide a img{
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .swiper-slide a img{
+        max-height: 384px;
+    }
+}
+.find-nav{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    margin: 6px 0;
+}
+.find-nav .icon{
+    text-align: center;
+    margin: 3px auto;
+    display: block;
+    width: 45px;
+    height: 45px;
+}
+.find-nav .icon-rank{
+    background: url("../images/icon-rank.png") 0 0 no-repeat ;
+    background-size: 100%;
+}
+.find-nav .icon-ticket{
+    background: url("../images/icon_ticket.png") 0 0 no-repeat ;
+    background-size: 100%;
+}
+.find-nav .icon-bracelet{
+    background: url("../images/icon-bracelet.png") 0 0 no-repeat ;
+    background-size: 100%;
+}
+.find-nav a{
+    -webkit-flex: 1;
+    flex: 1;
+    color: #717280;
+    font-size: 12px;
+}
+.split{
+    background: #EEEEEE;
+    height: 12px;
+    width: 100%;
+}
+.rank-banner{
+    position: relative;
+}
+.rank-banner > img{
+    width: 100%;
+    vertical-align: top;
+    display: block;
+}
+.rank-banner .title{
+    font-size:0;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.rank-banner .title > img{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+.rank-banner .title span{
+    vertical-align: bottom;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+}
+.rank-banner .title span.name{
+    margin-left: 8px;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.rank-box{
+    background: #fff;
+}
+.rank-box + .rank-box{
+    margin-top: 15px;
+}
+.rank-box .rank-box-details{
+    padding: 15px 0;
+    height: 80px;
+    line-height: 50px;
+    overflow: hidden;
+}
+.rank-box .left{
+    margin-left: 8px;
+}
+.rank-box .right{
+    margin-right: 8px;
+}
+.rank-box .rank-box-details img{
+    vertical-align: middle;
+}
+.rank-box .rank-box-details .icon-rank-head{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+.rank-box .rank-box-details .icon-sort{
+    width: 30px;
+    text-align: center;
+}
+.rank-box .rank-box-details .icon-sort img{
+    width: 28px;
+    height: 37px;
+}
+.rank-box .rank-box-details .content.name{
+    font-size: 16px;
+    max-width: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.rank-box .rank-box-details .content .name{
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    max-width: 64px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.rank-box .rank-box-details .content .sort{
+    height: 25px;
+    line-height: 25px;
+    color: #999999;
+    font-size: 14px;
+    text-align: center;
+}
+.rank-box .rank-box-details .content .content-num{
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.rank-box .rank-box-details .content img{
+    display: block;
+    border: none;
+    width: 27px;
+    height: 25px;
+}
+.rank-box .content.right{
+    width: 30px;
+    overflow: hidden;
+}
+.rank-box .rank-box-details .step{
+    font-size: 18px;
+    color: #00CCCC;
+}
+.rank-box .rank-box-details .step.on{
+    color: #F6882E;
+}
+.ticket-split{
+    height: 14px;
+    background: #C47031;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+.ticket{
+    position: relative;
+    padding: 0 26px;
+    margin-top: -7px;
+}
+.ticket .ticket-left{
+    position: absolute;
+    left: 15px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 7px solid #D6B98E;
+    border-left: 11px solid transparent;
+}
+.ticket .ticket-right{
+    position: absolute;
+    right: 15px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 7px solid #D6B98E;
+    border-right: 11px solid transparent;
+}
+.ticket .ticket-main{
+    background: #fff;
+    padding: 15px 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+.ticket .ticket-main .ticket-title{
+    font-size: 18px;
+}
+.ticket .ticket-main .ticket-slogan{
+    font-size: 20px;
+    color: #FF3333;
+}
+.ticket .packet-left{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: url("../images/packet_02.png") 0 0 no-repeat;
+    width: 60px;
+    height: 54px;
+    background-size: 100%;
+}
+.ticket .packet-right{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    background: url("../images/packet_01.png") 0 0 no-repeat;
+    width: 60px;
+    height: 54px;
+    background-size: 100%;
+}
+.ticket .ticket-result{
+    margin: 15px auto;
+    font-size: 16px;
+}
+.ticket .btn-warning{
+    margin: 0 auto;
+    display: block;
+    width: 125px;
+    height: 30px;
+    line-height: 18px;
+    font-size: 16px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+.ticket .ticket-boxs{
+    margin-top: 15px;
+}
+.ticket .ticket-boxs .ticket-boxs-details{
+    margin-top: 6px;
+}
+.ticket .ticket-box{
+    padding: 0 15px;
+    text-align: center;
+    display: flex;
+    display: -webkit-flex;
+}
+.ticket .ticket-box .ticket-detail{
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ticket .ticket-box .ticket-detail.two{
+    -webkit-flex: 2;
+    flex: 2;
+}
+.ticket .ticket-box .ticket-detail.split{
+    text-decoration:line-through;
+    height: 1px;
+    margin-top: 12px;
+}
+.active-main .main-title{
+    position: relative;
+    margin-bottom: 10px;
+}
+.active-main .main-title .split-title{
+    position: absolute;
+    top: 26px;
+    left: 0;
+    width: 126px;
+    height: 5px;
+    background: #F6882F;
+}
+.active-main .main-title .split-title.type{
+    width: 108px;
+}
+.active-main .main-title .split-title.attend{
+    width: 72px;
+}
+.active-main .main-title .split{
+    height: 1px;
+}
+.active-main .main-title h4{
+    height: 20px;
+    line-height: 20px;
+    font-size: 18px;
+    color: #F6882F;
+}
+.active-main .main-title .left{
+    border-bottom: 1px solid #ccc;
+}
+.active-main  .main-content{
+    font-size: 14px;
+    text-indent: 14px;
+}
+.active-main .tip{
+    position: relative;
+    border: 1px dotted #ccc;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+}
+.active-main .tip .tip-title{
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80px;
+    background: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+.active-main .tip .tip-content{
+    font-size: 14px;
+    text-indent: 14px;
+    color: #999999;
+}
+.active-btn .btn-warning{
+    display: block;
+}
+.active-btn  .btn-link{
+    display: inline-block;
+    padding: 0 12px;
+    height: 50px;
+    line-height: 50px;
+    color: #FF6600;
+    margin: 0 auto;
+    font-size: 16px;
+}

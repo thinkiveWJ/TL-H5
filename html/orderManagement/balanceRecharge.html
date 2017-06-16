@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>摩赞 | 手环后台管理</title>
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link href="../../style/bootstrap.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/bootstrap-datepicker.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/ui.chosen.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/base.css?v=2.0.0" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-datepicker.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-paginator.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/ui.chosen.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/page.common.js?v=2.0.0"></script>
+    <!--[if lt IE 9]>
+    <script src="../../js/html5shiv.min.js?v=2.0.0"></script>
+    <script src="../../js/respond.min.js?v=2.0.0"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="main">
+    <div class="container-fluid" >
+        <div class="row search-box">
+            <h4 class="title">余额充值</h4>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="startDate" class="form-label">开始时间：</label>
+                    <input type="text" id="startDate"  class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="endDate" class="form-label">结束时间：</label>
+                    <input type="text" id="endDate"  class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="orderId" class="form-label">订单编号：</label>
+                    <input type="text" id="orderId" placeholder="订单编号" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="cardCoupon" class="form-label">支付单号：</label>
+                    <input type="text" id="cardCoupon" placeholder="支付单号" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="userName" class="form-label">用户名：</label>
+                    <input type="text" id="userName" placeholder="用户名" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="payType" class="form-label">支付方式：</label>
+                    <select id="payType" data-xtype="chosen" class="form-input">
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="userPhone" class="form-label">用户电话：</label>
+                    <input type="text" id="userPhone" placeholder="用户电话" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-12 text-right search-btn">
+                <a type="button" id="queryBTN" class="btn btn-primary"><sapn class="glyphicon glyphicon-search"></sapn> 查询</a>
+                <a type="button" id="exportBTN" class="btn btn-primary"><sapn class="glyphicon glyphicon-open"></sapn> 导出</a>
+            </div>
+        </div>
+        <!-- 导出form表单 -->
+        <form action="http://m3.beacool.com/mozan/userWalletRecordsQueryForWebForExport.do" id="exportForm" enctype="application/x-www-form-urlencoded" method="post">
+            <input type="hidden" name="startTime">
+            <input type="hidden" name="endTime">
+            <input type="hidden" name="orderId">
+            <input type="hidden" name="cardCoupon">
+            <input type="hidden" name="userName">
+            <input type="hidden" name="userPhone">
+            <input type="hidden" name="payMethod">
+            <input type="hidden" name="token">
+        </form>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead>
+                    <!--<td style="margin-left: 15px;"><input id="all" type="checkbox"></td>-->
+                    <td>序号</td>
+                    <td>订单编号</td>
+                    <td>订单金额</td>
+                    <td>支付方式</td>
+                    <td>支付单号（卡券码）</td>
+                    <td>用户名</td>
+                    <td>用户电话</td>
+                    <td>创建时间</td>
+                    <td>订单备注</td>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+        <ul id="pager"></ul>
+    </div>
+</div>
+
+<script type="text/javascript" src="balanceRecharge.js?v=2.0.0"></script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.css">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: "微软雅黑";
+		}
+		a:hover{
+			text-decoration: none;
+		}
+		.title{
+			height: 50px;
+			line-height: 50px;
+			font-size: 20px;
+			text-align: center;
+			font-weight: bold;
+			color: #4BB340;
+		}
+		.main{
+			position: absolute;
+			top: 65px;
+			right: 0;
+			bottom: 15px;
+			left: 0;
+			text-align: center;
+		}
+		.hospital{
+			height: 100%;
+			border: 0;
+		}
+		.hospital-box{
+			height: 25%;
+		}
+		.hospital-box img{
+			height: 100%;
+		}
+		.hospital-box span{
+			display: inline-block;
+			width: 80px;
+			height: 100%;
+			background: #E5E4E2;
+		}
+		@media (min-width: 990px){
+			.person{
+				display: block;
+				width: 56px;
+				height: 85px;
+			}
+		}
+
+		@media (max-width: 990px) {
+			.person{
+				display: block;
+				width: 28px;
+				height: 42px;
+			}
+		}
+		.person a{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.person a{
+			cursor: pointer;
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+		.person img{
+			width: 100%;
+		}
+		img{
+			vertical-align: top;
+			/*cursor: pointer;*/
+		}
+		.tooltip-details .tooltip-name{
+			width: 40%;
+			font-size: 14px;
+			text-align: right;
+		}
+		.tooltip-details .content{
+			font-size: 20px;
+			position: relative;
+		}
+		#tooltip img{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<h4 class="title">定位与体温演示系统1.1版</h4>
+<div class="main">
+	<div class="hospital">
+		<div class="hospital-box hospital01">
+			<img id="demoImg" src="images/hospital_icon05.png" class="icon05" data-position="1,1"><span></span><img src="images/hospital_icon06.png" data-position="1,2">
+		</div>
+		<div class="hospital-box hospital02">
+			<img src="images/hospital_icon05.png" class="icon05" data-position="2,1"><span></span><img src="images/hospital_icon06.png" data-position="2,2">
+		</div>
+		<div class="hospital-box hospital03">
+			<img src="images/hospital_icon05.png" class="icon05" data-position="3,1"><span></span><img src="images/hospital_icon06.png" data-position="3,2">
+		</div>
+		<div class="hospital-box hospital04">
+			<img src="images/hospital_icon05.png" class="icon05" data-position="4,1"><span></span><img src="images/hospital_icon06.png" data-position="4,2">
+		</div>
+	</div>
+
+	<div class="person" id="person">
+		<a id="tooltip" type="button" data-toggle="tooltip" data-placement="top" title="">
+			张三
+			<img src="images/hospital_icon03.png"/>
+		</a>
+	</div>
+	<div class="person" id="person2">
+		<a id="tooltip2" type="button" data-toggle="tooltip" data-placement="top" title="">
+			李四
+			<img src="images/hospital_icon03.png"/>
+		</a>
+	</div>
+	<h4 id="room11" style="display: none">1号房间</h4>
+	<h4 id="room12" style="display: none">2号房间</h4>
+	<h4 id="room21" style="display: none">3号房间</h4>
+	<h4 id="room22" style="display: none">4号房间</h4>
+	<h4 id="room31" style="display: none">5号房间</h4>
+	<h4 id="room32" style="display: none">6号房间</h4>
+	<h4 id="room41" style="display: none">7号房间</h4>
+	<h4 id="room42" style="display: none">8号房间</h4>
+</div>
+
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="bootstrap.js"></script>
+<script type="text/javascript" src="mqttws31.js"></script>
+<script type="text/javascript" src="hub.js"></script>
+<script type="text/javascript">
+	var TEMP = TEMP2 = 36.7;
+	$(function () {
+		init();//初始化
+		var options = {
+			callback: getRoomFunc
+		};
+		var hub = new Hub(options);
+		console.log(hub);
+		$(window).resize(function () {
+			init();//初始化
+			if(window.timer){//温度定时器
+				clearInterval(window.timer);
+			}
+		});
+	});
+	/**
+	 * 初始化方法
+	 */
+	function init() {
+		var hX = $(".hospital01 .icon05").offset().left,
+				hY = $(".hospital01 .icon05").offset().top - 65,
+				hW = $(".hospital01 .icon05").width(),
+				hH = $(".hospital01 .icon05").height();
+		var pW = $(".person").width(),
+				pH = $(".person").height();
+		$("#person").css({
+			position: "absolute",
+			top: -500 + "px",
+			left: -500 + "px"
+		});
+		$("#person2").css({
+			position: "absolute",
+			top: -500 + "px",
+			left: -500 + "px"
+		});
+		for(var i = 1; i < 3; i++){
+			for(var j = 1; j < 5; j ++){
+				var top = (hY + hH*j - hH/4 - hH/2 - pH/2) + "px";
+				var left = (hX + hW*i - hW/2 - pW/2);
+				var left = i%2 == 0 ?  (left + 80 + "px") : (left + "px");
+				$("#room"+j+i).css({
+					display: "block",
+					position: "absolute",
+					left: left,
+					top: top
+				});
+			}
+		}
+		$(document).on("click touchstart",function(e){
+			var obj = e.srcElement ? e.srcElement : e.target;
+			var _target = $(obj);
+			if (_target.closest('.person').length == 0) {
+				$('[data-toggle="tooltip"]').tooltip('hide');
+			}else{
+				var flag = _target.parent().next(".tooltip").hasClass("in");
+				if(!flag){
+//					var id = _target.parents(".person").attr("id");
+//					if(id == "person"){
+//						$("#" + id).find(".tooltip-details h6").html(TEMP+"℃");
+//					}
+//					if(id == "person2"){
+//						$("#" + id).find(".tooltip-details h6").html(TEMP2+"℃");
+//					}
+					_target.parent().tooltip('show');
+				}
+			}
+		});
+		sendData();
+	}
+
+	function sendData() {
+		window.sendMessage = [];
+		window.removePersonIndex = 0;
+		window.removePersonIndex2 = 0;
+		window.timer = setInterval(function () {
+			var data = window.sendMessage;
+			window.sendMessage = [];
+			getTempFunc(data);
+		},1000);
+	}
+	/**
+	 * 获取温度包
+	 */
+	function getTempFunc(result) {
+		var len = result.length;
+		var temp = [];
+		var temp2 = [];
+		for(var i = 0; i < len; i ++){
+			var result2 = JSON.parse(result[i]);
+			var data = result2['ldata'];
+			if(!data){
+				return;
+			}
+			var dataLen = data.length;
+			for(var j = 0; j < dataLen; j++){
+				if(data[j]['b'] == '30012E9732E6414D6B'){
+					temp.unshift(data[j]['r']);
+				}
+				if(data[j]['b'] == '3001907DF27E414D0B'){
+					temp2.unshift(data[j]['r']);
+				}
+			}
+		}
+		removePersonFunc(temp, temp2);
+//			var tempLen = temp.length;
+		var tempStr = '';
+		console.log(typeof(temp)+ "temp:"+ temp);
+		for(var i in temp ){
+			if(temp[i].length > 4){
+				tempStr = temp[i];
+				console.log("tempStr;"+tempStr);
+				showTemp(tempStr, 1);
+				break;
+			}
+		}
+		var tempStr2 = '';
+		for(var i in temp2){
+			if(temp2[i].length > 4){
+				tempStr2 = temp2[i];
+				showTemp(tempStr2, 2);
+				break;
+			}
+		}
+	}
+	function removePersonFunc(temp, temp2) {
+		if(temp.length == 0){
+			window.removePersonIndex ++;
+		}else{
+			window.removePersonIndex = 0;
+		}
+		if(temp2.length == 0){
+			window.removePersonIndex2 ++;
+		}else{
+			window.removePersonIndex2 = 0;
+		}
+
+		if(window.removePersonIndex > 9){
+			$("#person").css({
+				position: "absolute",
+				top: -500 + "px",
+				left: -500 + "px"
+			});
+			window.removePersonIndex = 0;
+		}
+		if(window.removePersonIndex2 > 9){
+			$("#person2").css({
+				position: "absolute",
+				top: -500 + "px",
+				left: -500 + "px"
+			});
+			window.removePersonIndex2 = 0;
+		}
+	}
+	function showTemp(temp, ring){
+
+		var tempStr2, tempStr3;
+		tempStr2 = temp.substring(4, 6);
+		tempStr2 = parseInt(tempStr2, 16);
+		tempStr3 = temp.substring(6, 8);
+		tempStr3 = parseInt(tempStr3, 16);
+		temp = (tempStr2 << 8) | tempStr3;
+		if ((0 < temp) && (temp < 0xFFFF)){
+			if(ring == 1){
+				TEMP = temp / 256.0;
+			}
+			if(ring == 2){
+				TEMP2 = temp / 256.0;
+			}
+		}
+//			TEMP = (TEMP < 35.0) ? 35.0 :  TEMP;
+//			TEMP = (TEMP > 43.0) ? 43.0 :  TEMP;
+//			TEMP2 = (TEMP2 < 35.0) ? 35.0 :  TEMP2;
+//			TEMP2 = (TEMP2 > 43.0) ? 43.0 :  TEMP2;
+		if(ring == 1){
+			showTooltip("#tooltip", TEMP);
+		}
+		if(ring == 2){
+			showTooltip("#tooltip2", TEMP2);
+		}
+	}
+	function showTooltip(id, tempStr) {
+		if(tempStr < 30){
+			$(id + " img").attr("src", 'images/hospital_icon03.png');
+		}else if(tempStr < 40){
+			$(id + " img").attr("src", 'images/hospital_icon04.png');
+		}else {
+			$(id + " img").attr("src", 'images/hospital_icon02.png');
+		}
+		console.log(tempStr);
+		tempStr = Math.round(tempStr * 10)/10;
+		var str = "<div class='tooltip-details'><h6 class='content text-center'>"+tempStr+"℃</h6></div>";
+		$(id).attr("data-original-title", str);
+		$(id+'[data-toggle="tooltip"]').tooltip({
+			html: true
+		});
+		$(id).parents(".person").find(".tooltip-details h6").html(tempStr+"℃");
+	}
+	//获取房间数据包
+	function getRoomFunc(result){
+		window.sendMessage.push(result);
+		var distance = [];
+		var distance2 = [];
+		var result = JSON.parse(result);
+		var data = result['ldata'];
+		if(!data){
+			return;
+		}
+		var dataLen = data.length;
+		for(var j = 0; j < dataLen; j++){
+			if(data[j]['b'] == '30012E9732E6414D6B'){
+				distance.push({
+					beacon: result['beacon'],
+					distance: data[j]['lr']
+				});
+			}
+			if(data[j]['b'] == '3001907DF27E414D0B'){
+				distance2.push({
+					beacon: result['beacon'],
+					distance: data[j]['lr']
+				});
+			}
+		}
+		var room = '';
+		if(distance.length != 0){
+			for(var i in distance){
+				if(distance[i]['distance'] > -70){
+					room = distance[i]['beacon'];
+					break;
+				}
+			}
+			if(room){
+				getRoomFormat(room, 1);//获取对应的房间
+			}
+		}
+
+		var room2 = '';
+		if(distance2.length != 0){
+			for(var i in distance2){
+				if(distance2[i]['distance'] > -70){
+					room2 = distance2[i]['beacon'];
+					break;
+				}
+			}
+			if(room2){
+				getRoomFormat(room2, 2);//获取对应的房间
+			}
+		}
+
+	}
+	//定位到具体房间
+	function getRoomFormat(room, ring) {
+		switch (room){
+			case "1F8D91D6431BF72F":
+				positionFunc([1, 1], ring);//定位
+				break;
+			case "12C50296F99CD875":
+				positionFunc([1, 2], ring);//定位
+				break;
+			case "1E3DEA389FF539EA":
+				positionFunc([2, 1], ring);//定位
+				break;
+			case "180E150CBE1B5840":
+				positionFunc([2, 2], ring);//定位
+				break;
+			case "101BE5E0CAC02D16":
+				positionFunc([3, 1], ring);//定位
+				break;
+			case "11FBA3B344037FAB":
+				positionFunc([3, 2], ring);//定位
+				break;
+			case "1F28D415A10D8B22":
+				positionFunc([4, 1], ring);//定位
+				break;
+			case "11FACDC9A67AFE6F":
+				positionFunc([4, 2], ring);//定位
+				break;
+		}
+	}
+	/**
+	 * 定位到哪个房间
+	 */
+	function positionFunc(position, ring) {
+		var hX = $(".hospital01 .icon05").offset().left,
+				hY = $(".hospital01 .icon05").offset().top - 65,
+				hW = $(".hospital01 .icon05").width(),
+				hH = $(".hospital01 .icon05").height();
+		var pW = $(".person").width(),
+				pH = $(".person").height();
+		var top,left;
+		top = (hY + hH*position[0] - hH/2 - pH/2) ;
+		left = (hX + hW*position[1] - hW/2 - pW/2);
+		left = position[1]%2 == 0 ?  (left + 80 ) : left;
+		if(ring == 1){
+			$("#person").animate({
+				left: left+ "px",
+				top: top+ "px"
+			});
+		}
+		if(ring == 2){
+			$("#person2").animate({
+				left: (left - hW/4) + "px",
+				top: top + "px"
+			});
+		}
+	}
+</script>
+</body>
+</html>

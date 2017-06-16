@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../style/bootstrap.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/swiper.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/mobiscroll-2.13.2.full.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/base.css?v=1.0.1" charset="UTF-8">
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/swiper.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/circle-progress.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/touche.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/p-pull-refresh.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/mobiscroll-2.13.2.full.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/common.js?v=1.0.1"></script>
+    <title>今日活动</title>
+</head>
+<body>
+    <header>
+        <div class="container-fluid text-center">
+            <a href="" class="glyphicon glyphicon-menu-left pull-left"></a> 今日活动
+            <div class="clearfix"></div>
+        </div>
+    </header>
+    <section class="load-data text-center">
+        <span class="text">下拉开始同步数据</span> <img src="../../images/loading.gif"/>
+    </section>
+    <section class="container-fluid" id="loadData">
+        <div class="bluetooth">
+            <span class="icon"></span>
+            开启蓝牙连接手环
+            <button id="ignore" class="btn btn-primary pull-right">忽略</button>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <section class="container-fluid top40 bottom50">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="./stepRecordToday.html?v=1.0.1" class="circle step text-center">
+                        <div class="content">
+                            <div>
+                                <div class="circle-title">今日步数</div>
+                                <div class="circle-main">
+                                    <span class="big step">0</span>
+                                </div>
+                                <div class="circle-detail">
+                                    <span class="text-right">0米</span> <span class="detail_icon icon_step"></span> <span class="text-left">0千卡</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="./sleepRecordYesterday.html?v=1.0.1" class="circle sleep text-center">
+                        <div class="data sleep-top">24</div>
+                        <div class="data sleep-right">6</div>
+                        <div class="data sleep-bottom">12</div>
+                        <div class="data sleep-left">18</div>
+                        <div class="content">
+                            <div>
+                                <div class="circle-title">昨夜睡眠</div>
+                                <div class="circle-main">
+                                    <span class="hours big">0</span>小时<span class="minute big">0</span>分钟
+                                </div>
+                                <div class="circle-detail">
+                                    <span class="text-right">0h深睡</span> <span class="detail_icon icon_sleep"></span> <span class="text-left">0h潜睡</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <footer>
+        <a class="on" href="../index/index.html?v=1.0.1">
+            <span class="footer_icon icon_index"></span>首页
+        </a>
+        <a href="../bracelet/bracelet.html?v=1.0.1">
+            <span class="footer_icon icon_bracelet"></span>手环
+        </a>
+        <a href="../card/busCard.html?v=1.0.1">
+            <span class="footer_icon icon_bus"></span>公交卡
+        </a>
+    </footer>
+    <script type="text/javascript" src="./index.js?v=1.0.1"></script>
+</body>
+</html>

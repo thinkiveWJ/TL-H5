@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>摩赞 | 手环后台管理</title>
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link href="../../style/bootstrap.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/bootstrap-datepicker.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/ui.chosen.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/base.css?v=2.0.0" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-datepicker.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-paginator.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/ui.chosen.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/page.common.js?v=2.0.0"></script>
+    <!--[if lt IE 9]>
+    <script src="../../js/html5shiv.min.js?v=2.0.0"></script>
+    <script src="../../js/respond.min.js?v=2.0.0"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="main">
+    <div class="container-fluid">
+        <div class="row search-box">
+            <h4 class="title">优惠券管理</h4>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="startDate" class="form-label">
+                        <select name="" id="dateStartType" data-xtype="chosen" class="form-control"></select>：
+                    </label>
+                    <input type="text" id="startDate"  class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="endDate" class="form-label">
+                        <select name="" id="dateEndType" disabled data-xtype="chosen" class="form-input"></select>：
+                    </label>
+                    <input type="text" id="endDate"  class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="batchNumber" class="form-label">生产批次号：</label>
+                    <input type="text" id="batchNumber" placeholder="生产批次号" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="" class="form-label">卡券码：</label>
+                    <input type="text" id="" placeholder="卡券码" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="" class="form-label">面额：</label>
+                    <input type="text" id="" placeholder="面额" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="" class="form-label">状态：</label>
+                    <select id="" data-xtype="chosen" class="form-input"></select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="" class="form-label">所属活动：</label>
+                    <select id="" data-xtype="chosen" class="form-input"></select>
+                </div>
+            </div>
+            <div class="col-md-12 text-right search-btn">
+                <a id="queryBTN" type="button" class="btn btn-primary"><sapn class="glyphicon glyphicon-search"></sapn> 查询</a>
+                <a id="exportBTN" type="button" class="btn btn-primary"><sapn class="glyphicon glyphicon-open"></sapn> 导出</a>
+                <a id="addBatchCouponBTN" type="button" class="btn btn-primary"><sapn class="glyphicon glyphicon-plus"></sapn> 批量生产优惠券</a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead>
+                <!--<td style="margin-left: 15px;"><input id="all" type="checkbox"></td>-->
+                <td>序号</td>
+                <td>优惠券类型</td>
+                <td>所属活动</td>
+                <td>优惠券码</td>
+                <td>生产批次号</td>
+                <td>面额</td>
+                <td>有效期</td>
+                <td>优惠券名称</td>
+                <td>使用说明</td>
+                <td>URL</td>
+                <td>状态</td>
+                <td>创建时间</td>
+                <td>领取时间</td>
+                <td>过期时间</td>
+                <td>使用时间</td>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+        <ul id="pager"></ul>
+    </div>
+</div>
+<!-- 批量生产优惠券 -->
+<div class="modal fade" id="couponPanel" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">批量生产优惠券</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-display">
+                    <label for="" class="form-label no-select">生产批次号：</label>
+                    <input id="" type="text" placeholder="请输入生产批次号" class="form-input form-control">
+                </div>
+                <div class="form-display">
+                    <label for="" class="form-label no-select">优惠券类型：</label>
+                    <select id="" data-xtype="chosen" class="form-input"></select>
+                </div>
+                <div class="form-display">
+                    <label for="" class="form-label no-select">所属活动：</label>
+                    <select id="" data-xtype="chosen" class="form-input"></select>
+                </div>
+                <div class="form-display">
+                    <label for="" class="no-select form-label">优惠券名称：</label>
+                    <input id="" type="text" placeholder="请输入优惠券名称" class="form-input form-control">
+                </div>
+                <div class="form-display">
+                    <label for="denominationAdd" class="no-select form-label">面额：</label>
+                    <input id="denominationAdd" type="text" placeholder="请输入卡券面额" class="form-input form-control">
+                </div>
+                <div class="form-display">
+                    <label for="countAdd" class="no-select form-label">数量：</label>
+                    <input id="countAdd" type="text" placeholder="请输入生产数量" class="form-input form-control">
+                </div>
+                <div class="form-display">
+                    <label for="couponValidityDate" class="no-select form-label">有效期：</label>
+                    <select id="couponValidityDate" data-xtype="chosen" class="form-input">
+                        <option value="">请选择</option>
+                        <option value="7">领取后7天</option>
+                        <option value="30">领取后30天</option>
+                    </select>
+                </div>
+                <div class="form-display">
+                    <label for="" class="no-select form-label">自定义有效期：</label>
+                    <input id="couponStartDate" type="text" placeholder="请输入活动开始时间" class="form-control" style="width: 30%;display: inline-block;">
+                    <input id="couponEndDate" type="text" placeholder="请输入活动结束时间" class="form-control" style="width: 30%;display: inline-block;">
+                </div>
+                <div class="form-display">
+                    <label class="no-select form-label" style="vertical-align: top;">使用说明：</label>
+                    <div class="form-input">
+                        <textarea id="" class="desc" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary cancel" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> 取消</button>
+                <button type="button" class="btn btn-primary ok"><span class="glyphicon glyphicon-ok"></span> 确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="couponManagement.js?v=2.0.0"></script>
+</body>
+</html>

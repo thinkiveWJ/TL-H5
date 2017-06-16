@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../style/bootstrap.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/swiper.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/mobiscroll-2.13.2.full.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/base.css?v=1.0.1" charset="UTF-8">
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/swiper.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/circle-progress.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/touche.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/p-pull-refresh.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/mobiscroll-2.13.2.full.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/common.js?v=1.0.1"></script>
+    <title>手环</title>
+</head>
+<body style="background: #fff;height: 100%;">
+<header>
+    <div class="container-fluid text-center">手环</div>
+</header>
+<section class="bracelet binding mtop50 mbottom45 container-fluid text-center">
+    <img src="../../images/bracelect.png"/>
+    <div class="prompt text-left">您还没有绑定手环，只有绑定手环才可以查看更多内容哦！</div>
+    <a id="binding" type="button" class="btn btn-primary">绑定手环</a>
+</section>
+<section class="search-binding none text-center">
+    <div class="title">搜索手环</div>
+    <div class="search-prompt">请将手环佩戴在手腕上并靠近手环</div>
+    <div style="position: relative;margin-top: 30px;">
+        <div class="circle">
+            <img src="../../images/bracelect.png"/>
+            <div class="circle-line">
+                <div class="tips rotate"></div>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-primary none" type="button">重新搜索</a>
+    <a id="unbind" class="unbind">先不绑定了</a>
+</section>
+<footer>
+    <a href="../index/index.html?v=1.0.1">
+        <span class="footer_icon icon_index"></span>首页
+    </a>
+    <a class="on" href="../bracelet/searchBracelet.html?v=1.0.1">
+        <span class="footer_icon icon_bracelet"></span>手环
+    </a>
+    <a href="../card/busCard.html?v=1.0.1">
+        <span class="footer_icon icon_bus"></span>公交卡
+    </a>
+</footer>
+<script type="text/javascript" src="./searchBracelet.js?v=1.0.1"></script>
+</body>
+</html>

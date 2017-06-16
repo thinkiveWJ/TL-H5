@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>摩赞 | 手环后台管理</title>
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link href="../../style/bootstrap.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/bootstrap-datepicker.css?v=2.0.0" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../style/bootstrap-datetimepicker.css?v=2.0.0">
+    <link href="../../style/ui.chosen.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/base.css?v=2.0.0" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-datepicker.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-datetimepicker.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-datetimepicker.zh-CN.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-paginator.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/ui.chosen.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/page.common.js?v=2.0.0"></script>
+    <!--[if lt IE 9]>
+    <script src="../../js/html5shiv.min.js?v=2.0.0"></script>
+    <script src="../../js/respond.min.js?v=2.0.0"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="main">
+    <div class="container-fluid">
+        <div class="row search-box">
+            <h4 class="title">营销活动管理</h4>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="" class="form-label">活动标题：</label>
+                    <input type="text" id="" placeholder="请输入活动标题" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="" class="form-label">状态：</label>
+                    <select id="" data-xtype="chosen" class="form-input"></select>
+                </div>
+            </div>
+            <div class="col-md-12 text-right search-btn">
+                <a id="queryBTN" type="button" class="btn btn-primary"><sapn class="glyphicon glyphicon-search"></sapn> 查询</a>
+                <a id="addBTN" type="button" class="btn btn-primary"><sapn class="glyphicon glyphicon-plus"></sapn> 添加</a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead>
+                <!--<td style="margin-left: 15px;"><input id="all" type="checkbox"></td>-->
+                <td>序号</td>
+                <td>活动ID</td>
+                <td>活动标题</td>
+                <td>活动内容</td>
+                <td>活动时间</td>
+                <td>活动状态</td>
+                <td>操作</td>
+                </thead>
+                <tbody id="tbody">
+                    <td>序号</td>
+                    <td>活动ID</td>
+                    <td>活动标题</td>
+                    <td>活动内容</td>
+                    <td>活动时间</td>
+                    <td>活动状态</td>
+                    <td>
+                        <a id="address" type="button" class="btn btn-default">活动地点</a>
+                        <a type="button" class="btn btn-default">禁用</a>
+                        <a type="button" class="btn btn-default">编辑</a>
+                        <a type="button" class="btn btn-default">删除</a>
+                    </td>
+                </tbody>
+            </table>
+        </div>
+        <ul id="pager"></ul>
+    </div>
+</div>
+<!-- 添加 -->
+<div class="modal fade" id="addActivePanel" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">添加</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-display">
+                    <label for="" class="form-label no-select">活动标题：</label>
+                    <input id="" type="text" placeholder="请输入活动标题" class="form-input form-control">
+                </div>
+                <div class="form-display">
+                    <label for="addStartDate" class="form-label no-select">活动时间：</label>
+                    <input id="addStartDate" type="text" placeholder="请输入活动开始时间" class="form-control" style="width: 30%;display: inline-block;">
+                    <input id="addEndDate" type="text" placeholder="请输入活动结束时间" class="form-control" style="width: 30%;display: inline-block;">
+                </div>
+                <div class="form-display">
+                    <label class="no-select form-label" style="vertical-align: top;">活动内容：</label>
+                    <div class="form-input">
+                        <textarea id="" class="desc" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary cancel" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> 取消</button>
+                <button type="button" class="btn btn-primary ok"><span class="glyphicon glyphicon-ok"></span> 确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 活动地点 -->
+<div class="modal fade" id="addressPanel" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <a id="addAddressBTN" type="button" class="btn btn-primary pull-right" style="margin-right: 15px;"><span class="glyphicon glyphicon-plus"></span> 添加</a>
+                <form action="">
+                    <a type="button" class="btn btn-primary pull-right" style="margin-right: 15px;position: relative;"><span class="glyphicon glyphicon-download-alt"></span> 导入
+                        <input type="file" style="position: absolute;left: 0;right: 0;top:0;bottom:0;width:72px;cursor:pointer;opacity: 0;filter:Alpha(opacity=0);">
+                    </a>
+                </form>
+                <h4 class="modal-title">活动地点</h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped text-center">
+                        <thead>
+                        <!--<td style="margin-left: 15px;"><input id="all" type="checkbox"></td>-->
+                        <td>序号</td>
+                        <td>地点类型</td>
+                        <td>地点名称</td>
+                        <td>地点参数</td>
+                        <td>操作</td>
+                        </thead>
+                        <tbody id="addressTbody">
+                        <td>序号</td>
+                        <td>活动内容</td>
+                        <td>活动时间</td>
+                        <td>活动状态</td>
+                        <td>
+                            <a type="button" class="btn btn-default">编辑</a>
+                            <a type="button" class="btn btn-default">删除</a>
+                        </td>
+                        </tbody>
+                    </table>
+                </div>
+                <ul id="addressPager"></ul>
+            </div>
+            <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn btn-primary cancel" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> 取消</button>-->
+                <!--&lt;!&ndash;<button type="button" class="btn btn-primary ok"><span class="glyphicon glyphicon-ok"></span> 确定</button>&ndash;&gt;-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<!-- 地点添加 -->
+<div class="modal fade" id="addAddressPanel" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">添加</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">地点类型：</label>
+                        <div class="col-sm-8">
+                            <label class="col-sm-4 control-label">
+                                <input id="" type="radio" name="use" class="">GSP定位点
+                            </label>
+                            <label class="col-sm-4 control-label">
+                                <input id="" type="radio" checked name="use" valueType="beacon" class="">Beacon定位点
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">经纬度：</label>
+                        <div class="col-sm-8">
+                            <input id="" type="text" placeholder="请输入经纬度，并以英文逗号分隔开" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group beacon">
+                        <label class="col-sm-4 control-label">UUID：</label>
+                        <div class="col-sm-8">
+                            <input id="" type="text" placeholder="请输入Beacon的UUID" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group beacon">
+                        <label class="col-sm-4 control-label">Major：</label>
+                        <div class="col-sm-8">
+                            <input id="" type="text" placeholder="请输入Beacon的Major" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group beacon">
+                        <label class="col-sm-4 control-label">Mijor：</label>
+                        <div class="col-sm-8">
+                            <input id="" type="text" placeholder="请输入Beacon的Mijor" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary cancel" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> 取消</button>
+                <button type="button" class="btn btn-primary ok"><span class="glyphicon glyphicon-ok"></span> 确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="marketingActivity.js?v=2.0.0"></script>
+</body>
+</html>

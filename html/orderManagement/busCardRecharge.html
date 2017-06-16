@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>摩赞 | 手环后台管理</title>
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link href="../../style/bootstrap.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/bootstrap-datepicker.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/ui.chosen.css?v=2.0.0" rel="stylesheet"/>
+    <link href="../../style/base.css?v=2.0.0" rel="stylesheet"/>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-datepicker.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/bootstrap-paginator.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/ui.chosen.js?v=2.0.0"></script>
+    <script type="text/javascript" src="../../js/page.common.js?v=2.0.0"></script>
+    <!--[if lt IE 9]>
+    <script src="../../js/html5shiv.min.js?v=2.0.0"></script>
+    <script src="../../js/respond.min.js?v=2.0.0"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="main">
+    <div class="container-fluid" >
+        <div class="row search-box">
+            <h4 class="title">公交卡充值</h4>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="startDate" class="form-label">开始时间：</label>
+                    <input type="text" id="startDate"  class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="endDate" class="form-label">结束时间：</label>
+                    <input type="text" id="endDate"  class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="orderId" class="form-label">订单编号：</label>
+                    <input type="text" id="orderId" placeholder="订单编号" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="busiStatus" class="form-label">订单状态：</label>
+                    <select id="busiStatus" data-xtype="chosen" class="form-input">
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="outOrderId" class="form-label">卡公司单号：</label>
+                    <input type="text" id="outOrderId" placeholder="卡公司单号" class="form-input form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="cardType" class="form-label">卡类型：</label>
+                    <select id="cardType" data-xtype="chosen" class="form-input">
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-display">
+                    <label for="userId" class="form-label">用户ID：</label>
+                    <input type="text" id="userId" placeholder="用户ID" class="form-input form-control">
+                </div>
+            </div>
+
+
+
+            <div class="col-md-12 text-right search-btn">
+                <a type="button" id="queryBTN"  class="btn btn-primary"><sapn class="glyphicon glyphicon-search"></sapn> 查询</a>
+                <a type="button" id="exportBTN" class="btn btn-primary"><sapn class="glyphicon glyphicon-open"></sapn> 导出</a>
+            </div>
+        </div>
+        <!-- 导出form表单 -->
+        <form action="http://m3.beacool.com/mozan/exportTrafficCardChargeRecords.do" enctype="application/x-www-form-urlencoded" id="exportForm"  method="post">
+            <input name="record_id" type="hidden">
+            <input name="order_status" type="hidden">
+            <input name="out_order_id" type="hidden">
+            <input name="card_type" type="hidden">
+            <input name="user_id" type="hidden">
+            <input name="start_time" type="hidden">
+            <input name="end_time" type="hidden">
+            <input name="token" type="hidden">
+        </form>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead>
+                <!--<td style="margin-left: 15px;"><input id="all" type="checkbox"></td>-->
+                <td>序号</td>
+                <td>订单编号</td>
+                <td>订单金额</td>
+                <td>订单状态</td>
+                <td>卡类型</td>
+                <td>卡公司单号</td>
+                <td>用户ID</td>
+                <td>创建时间</td>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+        <ul id="pager"></ul>
+    </div>
+</div>
+<script type="text/javascript" src="busCardRecharge.js?v=2.0.0"></script>
+</body>
+</html>

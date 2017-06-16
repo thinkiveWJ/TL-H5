@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../style/bootstrap.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/swiper.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/mobiscroll-2.13.2.full.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/base.css?v=1.0.1" charset="UTF-8">
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/swiper.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/circle-progress.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/touche.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/p-pull-refresh2.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/mobiscroll-2.13.2.full.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/highcharts.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/common.js?v=1.0.1"></script>
+</head>
+<body>
+    <header>
+        <div class="container-fluid text-center">
+            <a onclick="history.go(-1)" class="glyphicon glyphicon-menu-left pull-left"></a> 今日活动记录
+            <div class="clearfix"></div>
+        </div>
+    </header>
+    <section class="container-fluid mtop35 record-highchart">
+        <div class="record-highchart-title text-center">
+            <div class="time">15:20</div>
+            <div class="step-num">1823步</div>
+            <div class="kcal">72千卡</div>
+        </div>
+    </section>
+    <section class="highchart">
+        <div class="record-highchart-detail text-center" id="container">
+        </div>
+        <div class="record-highchart-detail text-center no-data none" id="container2">
+            暂无活动记录
+        </div>
+    </section>
+    <section class="container-fluid record-details">
+        <div class="record-detail total on">
+            <div class="step">
+                <div class="title">总步数</div>
+                <div class="num">46步</div>
+            </div>
+            <div class="distance">
+                <div class="title">总里程</div>
+                <div class="num">41236米</div>
+            </div>
+            <div class="consume">
+                <div class="title">总消耗</div>
+                <div class="num">2千卡</div>
+            </div>
+        </div>
+        <div class="record-detail walk">
+            <div class="step">
+                <div class="title">行走步数</div>
+                <div class="num">412336步</div>
+            </div>
+            <div class="distance">
+                <div class="title">行走里程</div>
+                <div class="num">46米</div>
+            </div>
+            <div class="consume">
+                <div class="title">行走消耗</div>
+                <div class="num">2千卡</div>
+            </div>
+        </div>
+        <div class="record-detail run">
+            <div class="step">
+                <div class="title">跑步步数</div>
+                <div class="num">46步</div>
+            </div>
+            <div class="distance">
+                <div class="title">跑步里程</div>
+                <div class="num">46米</div>
+            </div>
+            <div class="consume">
+                <div class="title">跑步消耗</div>
+                <div class="num">2千卡</div>
+            </div>
+        </div>
+        <a href="./stepRecordHistory.html?v=1.0.1" class="btn btn-primary" type="button">统计</a>
+    </section>
+    <script type="text/javascript" src="./stepRecordToday.js?v=1.0.1"></script>
+</body>
+</html>

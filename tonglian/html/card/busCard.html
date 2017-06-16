@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../style/bootstrap.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/swiper.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/mobiscroll-2.13.2.full.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/base.css?v=1.0.1" charset="UTF-8">
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/swiper.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/circle-progress.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/touche.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/p-pull-refresh.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/mobiscroll-2.13.2.full.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/common.js?v=1.0.1"></script>
+    <title>我的公交卡</title>
+</head>
+<body>
+<header>
+    <div class="container-fluid text-center">
+        <div>
+            我的公交卡
+            <!--<a href="./transactionDetails.html?v=1.0.1" class="pull-right">明细</a>-->
+            <!--<div class="clearfix"></div>-->
+        </div>
+        <div class="mtop15">
+            <div class="pull-left">卡号</div>
+            <div class="pull-right">获取失败</div>
+            <div class="clearfix"></div>
+        </div>
+        <div>
+            <div class="pull-left">余额</div>
+            <span class="pull-right glyphicon glyphicon-repeat"></span><div class="pull-right">获取失败</div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</header>
+<section class="container-fluid mtop120 mbottom45 card">
+    <!--<a href="./help.html?v=1.0.1" class="card-help">-->
+        <!--<div class="pull-left">交通卡使用帮助</div>-->
+        <!--<div class="pull-right icon"></div>-->
+        <!--<div class="clearfix"></div>-->
+    <!--</a>-->
+    <ul class="list">
+        <li class="card-recharge pay">
+            <a href="">
+                <div class="pull-left">充值</div>
+                <!--<span class="pull-right glyphicon glyphicon-menu-right"></span>-->
+                <div class="clearfix"></div>
+            </a>
+            <div class="choose-money text-center mtop15 container-fluid">
+                <a class="btn btn-primary disabled">100元</a>
+                <a class="btn btn-primary">200元</a>
+            </div>
+        </li>
+        <li class="card-order">
+            <a href="">
+                <div class="pull-left">未完成订单</div>
+                <!--<span class="pull-right glyphicon glyphicon-menu-right"></span>-->
+                <div class="clearfix"></div>
+            </a>
+            <div class="abnormal container-fluid mtop15">
+                <div class="abnormal-list">
+                    <div class="prompt">温馨提示：由于手机通讯或蓝牙连接问题，可能存在账户扣款，但是交通卡充值未到账问题，
+                        您可以通过订单同步来处理未完成订单。系统处理订单无处同步，由上海旅游卡公司核对之后处理。</div>
+                    <ul class="list text-center">
+                        <li>
+                            <div class="pull-left week">05-03</div>
+                            <div class="pull-left icon icon-money"></div>
+                            <div class="pull-left desc">充值</div>
+                            <div class="pull-left num">1000.00</div>
+                            <a class="pull-right btn btn-primary">订单同步</a>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li>
+                            <div class="pull-left week">05-03</div>
+                            <div class="pull-left icon icon-money"></div>
+                            <div class="pull-left desc">充值</div>
+                            <div class="pull-left num">100.00</div>
+                            <a class="pull-right btn btn-primary">订单同步</a>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li class="help-trad">
+            <div class="choose-help-trad text-center">
+                <a href="./help.html?v=1.0.1" class="btn btn-primary">交通卡使用指南</a>
+                <a href="./transactionDetails.html?v=1.0.1" class="btn btn-primary">交易明细查询</a>
+            </div>
+        </li>
+    </ul>
+</section>
+<footer>
+    <a href="../index/index.html?v=1.0.1">
+        <span class="footer_icon icon_index"></span>首页
+    </a>
+    <a href="../bracelet/bracelet.html?v=1.0.1">
+        <span class="footer_icon icon_bracelet"></span>手环
+    </a>
+    <a class="on"  href="../card/busCard.html?v=1.0.1">
+        <span class="footer_icon icon_bus"></span>公交卡
+    </a>
+</footer>
+<script type="text/javascript" src="./busCard.js?v=1.0.1"></script>
+</body>
+</html>

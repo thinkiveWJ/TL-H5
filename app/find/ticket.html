@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../style/bootstrap.css" rel="stylesheet"/>
+    <link href="./common.css?v=2.0.2" rel="stylesheet"/>
+    <title>中奖纪录</title>
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=2.0.2"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=2.0.2"></script>
+    <script type="text/javascript" src="./scroll.js?v=2.0.2"></script>
+    <script type="text/javascript" src="./jquery.cookie.js?v=2.0.2"></script>
+    <script type="text/javascript" src="./page.common.js?v=2.0.2"></script>
+</head>
+<body style="background: #FFCC99;">
+<div id="last" class="container" style="margin: 15px auto;">
+    <div class="ticket-split"></div>
+    <div class="ticket">
+        <div class="ticket-left"></div>
+        <div class="ticket-right"></div>
+        <div class="packet-left"></div>
+        <div class="packet-right"></div>
+        <div class="ticket-main">
+            <div class="text-center">
+                <div class="ticket-title">你出行，我买单！</div>
+                <div class="ticket-slogan">百万红包大放送！</div>
+                <div class="ticket-result">中奖结果</div>
+            </div>
+            <a href="./activeDetails.html?v=2.0.2" class="btn btn-warning">参与活动</a>
+            <div class="ticket-boxs" id="winnerListBox">
+                <div class="ticket-box">
+                    <div class="ticket-detail split"></div>
+                    <div class="ticket-detail">中奖排行</div>
+                    <div class="ticket-detail split"></div>
+                </div>
+                <div class="ticket-boxs-details">
+                    <ul id="winnerList">
+                        <!--<li class="ticket-box">-->
+                            <!--<div class="ticket-detail">XXXX</div>-->
+                            <!--<div class="ticket-detail two">188*****621</div>-->
+                            <!--<div class="ticket-detail two">中奖50元</div>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="ticket-boxs" id="ticketRelTimeListBox">
+                <div class="ticket-box">
+                    <div class="ticket-detail split"></div>
+                    <div class="ticket-detail">实时中奖</div>
+                    <div class="ticket-detail split"></div>
+                </div>
+                <div id="ticketList" class="ticket-boxs-details" style="height: 120px; overflow: hidden;">
+                    <ul id="ticketRelTimeList">
+                        <!--<li class="ticket-box">-->
+                            <!--<div class="ticket-detail">XXXX</div>-->
+                            <!--<div class="ticket-detail two">188*****621</div>-->
+                            <!--<div class="ticket-detail two">中奖50元</div>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="ticket.js?v=2.0.2"></script>
+</body>
+</html>

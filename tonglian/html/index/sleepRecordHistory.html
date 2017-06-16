@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../style/bootstrap.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/swiper.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/mobiscroll-2.13.2.full.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/base.css?v=1.0.1" charset="UTF-8">
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/swiper.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/circle-progress.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/touche.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/p-pull-refresh2.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/mobiscroll-2.13.2.full.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/highcharts.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/common.js?v=1.0.1"></script>
+</head>
+<body>
+<header>
+    <div class="container-fluid text-center">
+        <a onclick="history.go(-1)" class="glyphicon glyphicon-menu-left pull-left"></a> 历史睡眠记录
+        <div class="clearfix"></div>
+    </div>
+</header>
+<section class="container-fluid mtop35 record-highchart">
+    <div class="record-highchart-title text-center">
+        <div class="time">2017-06-06</div>
+        <div class="step-num">20:00开始</div>
+        <div class="kcal">07:00结束</div>
+    </div>
+</section>
+<section class="highchart">
+    <div class="more-left"><img src="../../images/loading.gif"/><br>加<br>载<br>更<br>多</div>
+    <div class="record-highchart-detail text-center" id="container">
+    </div>
+    <div class="record-highchart-detail text-center no-data none" id="container2">
+        暂无睡眠记录
+    </div>
+</section>
+<section class="container-fluid record-details sleep">
+    <div class="record-detail total">
+        <div class="deep">
+            <div class="icon"></div>
+            <div class="title">深度睡眠</div>
+            <div class="num">1.5h</div>
+        </div>
+        <div class="light">
+            <div class="icon"></div>
+            <div class="title">浅睡眠</div>
+            <div class="num">4.5h</div>
+        </div>
+        <div class="sober">
+            <div class="icon"></div>
+            <div class="title">清醒时长</div>
+            <div class="num">0.5h</div>
+        </div>
+    </div>
+    <div class="record-detail time">
+        <div class="start-time">
+            <div class="icon"></div>
+            <div class="title">入睡时间</div>
+            <div class="num">20:00</div>
+        </div>
+        <div class="end-time">
+            <div class="icon"></div>
+            <div class="title">醒来时间</div>
+            <div class="num">06:00</div>
+        </div>
+        <div class="total-time">
+            <div class="icon"></div>
+            <div class="title">总睡眠</div>
+            <div class="num">5h</div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="./sleepRecordHistory.js?v=1.0.1"></script>
+</body>
+</html>

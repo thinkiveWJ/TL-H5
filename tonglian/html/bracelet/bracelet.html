@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../style/bootstrap.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/swiper.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/mobiscroll-2.13.2.full.min.css?v=1.0.1" charset="UTF-8">
+    <link rel="stylesheet" href="../../style/base.css?v=1.0.1" charset="UTF-8">
+    <script type="text/javascript" src="../../js/jquery-1.9.1.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/bootstrap.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/swiper.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/circle-progress.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/touche.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/p-pull-refresh.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/mobiscroll-2.13.2.full.min.js?v=1.0.1"></script>
+    <script type="text/javascript" src="../../js/common.js?v=1.0.1"></script>
+    <title>手环</title>
+</head>
+<body>
+<header>
+    <div class="container-fluid text-center">手环</div>
+</header>
+<section class="bracelet binded mtop35 mbottom45 container-fluid">
+    <div class="bracelet-info">
+        <div>
+            <div class="pull-left">
+                <div class="title">通联手环</div>
+                <div class="info electricity">剩余电量：60%</div>
+                <div class="info time">上次同步时间：刚刚</div>
+            </div>
+            <a class="pull-right btn btn-warning ">立即同步</a>
+            <div class="clearfix"></div>
+        </div>
+        <ul class="list">
+            <li class="target">
+                <span class="icon"></span>
+                <div class="list-info">
+                    <div class="pull-left">每日目标</div>
+                    <div class="pull-right"><span class="num">6000步</span> <span class="glyphicon glyphicon-menu-right"></span></div>
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+            <li class="alarm">
+                <span class="icon"></span>
+                <div class="list-info">
+                    <div class="pull-left">手环闹钟</div>
+                    <div class="pull-right"><span class="num">17:47</span><span class="glyphicon glyphicon-menu-right"></span></div>
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+            <li class="sedentary">
+                <span class="icon"></span>
+                <div class="list-info">
+                    <div class="pull-left">久坐提醒</div>
+                    <div class="pull-right"><span class="switch on"></span></div>
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+            <li class="sedentary-time">
+                <span class="icon"></span>
+                <div class="list-info">
+                    <div class="pull-left">久坐时间</div>
+                    <div class="pull-right"><span class="num">60分钟</span> <span class="glyphicon glyphicon-menu-right"></span></div>
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="bracelet-set">
+        <div class="title">手环提醒设置</div>
+        <ul class="list">
+            <li class="message">
+                <span class="icon"></span>
+                <div class="list-info">
+                    <div class="pull-left">消息提醒</div>
+                    <div class="pull-right"><span class="switch"></span></div>
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+            <li class="call">
+                <span class="icon"></span>
+                <div class="list-info">
+                    <div class="pull-left">来电提醒</div>
+                    <div class="pull-right"><span class="switch"></span></div>
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="bracelet-remind">
+        <div class="title">手环设置</div>
+        <ul class="list">
+            <li class="person-info">
+                <span class="icon"></span>
+                <a class="list-info" href="./personInfo.html?v=1.0.1">
+                    <div class="pull-left">个人信息</div>
+                    <div class="pull-right"><span class="glyphicon glyphicon-menu-right"></span></div>
+                    <div class="clearfix"></div>
+                </a>
+            </li>
+            <li class="unbound">
+                <span class="icon"></span>
+                <div class="list-info">
+                    <div class="pull-left">解除绑定手环</div>
+                    <div class="pull-right"><span class="glyphicon glyphicon-menu-right"></span></div>
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+            <li class="firmware">
+                <span class="icon"></span>
+                <div class="list-info">
+                    <div class="pull-left">固件升级</div>
+                    <div class="pull-right"><span class="num">7.52</span> <span class="glyphicon glyphicon-menu-right"></span></div>
+                    <div class="clearfix"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<ul id="mobiscroll" class="none">
+
+</ul>
+<input type="hidden" id="mobiscrollInput">
+<footer>
+    <a href="../index/index.html?v=1.0.1">
+        <span class="footer_icon icon_index"></span>首页
+    </a>
+    <a class="on" href="../bracelet/searchBracelet.html?v=1.0.1">
+        <span class="footer_icon icon_bracelet"></span>手环
+    </a>
+    <a href="../card/busCard.html?v=1.0.1">
+        <span class="footer_icon icon_bus"></span>公交卡
+    </a>
+</footer>
+
+<script type="text/javascript" src="./bracelet.js?v=1.0.1"></script>
+</body>
+</html>
